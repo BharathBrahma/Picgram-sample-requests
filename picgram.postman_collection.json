@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "b62c13bc-5e43-4822-b0d7-987f4b63a01e",
+		"name": "picgram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"emailId\": \"tony@gmail.com\",\r\n  \"password\": \"tony@190\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/picturegram/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picturegram",
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTcxNzgxNDE2LCJleHAiOjE1NzE3ODIwMTZ9.vkAwG4At-B7UasX1EC3_4U59h422Ij3lLQLAKpJjA1c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imageFile",
+							"type": "file",
+							"src": "/Users/bharathbrahma/Desktop/Screen Shot 2019-10-18 at 3.23.23 PM.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/picturegram/user/api/v1/uploadImageByUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picturegram",
+						"user",
+						"api",
+						"v1",
+						"uploadImageByUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTcxNzgxNTE3LCJleHAiOjE1NzE3ODIxMTd9.RWNXmLqKyBLwy5sIXGADVeYb4je2SjDFE6r9z46otr8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "rating",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "imageId",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/picturegram/reviews/api/v1/reviewPost?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picturegram",
+						"reviews",
+						"api",
+						"v1",
+						"reviewPost"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"emailId\": \"tony@gmail.com\",\n  \"password\": \"tony@190\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/picturegram/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picturegram",
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "avgReviews",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0IiwiaWF0IjoxNTcxNzU1MTQ5LCJleHAiOjE1NzE3NTU3NDl9.GoJizEU9g1jeJ1SCN4TD_IYJkpAtLXinABV73p5BYWM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/picturegram/reviews/api/v1/averageImageReviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picturegram",
+						"reviews",
+						"api",
+						"v1",
+						"averageImageReviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteImage",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNTcxNzgxNTY4LCJleHAiOjE1NzE3ODIxNjh9.jZpzzvjcPQymqpaR8Lcs8wORjqL1WF9ITl0h1KKEtuw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image_id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/picturegram/user/api/v1/deleteUserImage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"picturegram",
+						"user",
+						"api",
+						"v1",
+						"deleteUserImage"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
